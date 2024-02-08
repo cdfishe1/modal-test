@@ -15,17 +15,3 @@ for (let trigger of modalTriggers) {
   });
 }
 
-const form = document.querySelector("form");
-
-form.addEventListener("click", (event) => {
-  event.preventDefault();
-  const message = document.querySelector("[data-message]");
-  message.innerText="This form does nothing";
-})
-
-const shiftFocus = document.querySelector("[data-shift-focus]");
-const receiveFocus = document.querySelector("[data-receive-focus]"); 
-shiftFocus.addEventListener("blur", (event) => {
-    receiveFocus.setAttribute("tabindex", "-1");
-    receiveFocus.focus();
-  });
