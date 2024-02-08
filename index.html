@@ -1,1 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal test</title>
+</head>
+<body>
+    <p class="text">
+  Here's a native way of creating an accessible dialog
+</p>
 
+<p class="text">
+  When a user clicks the button to open the dialog, the modal opens, and moves focus to the dialog
+</p>
+
+<button data-receive-focus data-modal-for="testDialog" open aria-haspopup="dialog">Open modal</button>
+<dialog id="testDialog" aria-labelledby="dialog-title">
+  <button data-modal-for="testDialog" close class="close-dialog">Close modal</button>
+  <h1  id="dialog-title">An example of a native Dialog element</h1>
+  <p>This is a dialog box and, believe it or not, it's built into HTML, sure we needed some javascript to open it but hey, it's a start.</p>
+  <h2 data-message role="status"></h2>
+  <form action="">
+    <label for="first-name">First Name</label>
+    <input type="text" id="first-name">
+    <label for="last-name">Last Name</label>
+    <input type="text" id="last-name">
+    <label for="phone">Phone</label>
+    <input type="tel" id="phone">
+    <button data-shift-focus type="submit">Submit</button>
+  </form>
+  
+</dialog>
+
+<p class="text">
+  When a user closes the dialog, focus will shift back to the button that opened it.
+</p>
+</body>
+</html>
